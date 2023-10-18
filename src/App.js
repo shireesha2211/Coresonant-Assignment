@@ -1,6 +1,6 @@
 import './App.css'
-import Home from './components/Home'
+import TodoApplication from './components/TodoApplication'
 
-const App = () => <Home />
+const App = () => <TodoApplication />
 
 export default App

@@ -4,7 +4,7 @@ import {BsFilter} from 'react-icons/bs'
 import TodoItem from '../TodoItem'
 import './index.css'
 
-class Home extends Component {
+class TodoApplication extends Component {
   state = {
     todosListData: [],
     taskTitle: '',
@@ -157,4 +157,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default TodoApplication
