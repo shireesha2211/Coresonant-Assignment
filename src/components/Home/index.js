@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import {BsFilter} from 'react-icons/bs'
 
 import TodoItem from '../TodoItem'
 import './index.css'
@@ -9,6 +10,7 @@ class Home extends Component {
     taskTitle: '',
     error: '',
     todoItem: '',
+    isShow: false,
   }
 
   componentDidMount() {
@@ -53,7 +55,7 @@ class Home extends Component {
   }
 
   onChangeBoxElement = todoId => {
-    const {todosListData, todoItem} = this.state
+    const {todosListData} = this.state
     const newTodo = todosListData.filter(each => each.id === todoId)
     const {userId, id, title, completed} = newTodo[0]
 
@@ -86,8 +88,17 @@ class Home extends Component {
     this.setState({taskTitle: todo[0].title})
   }
 
+  onClickFilter = () => {
+    const {isShow} = this.state
+    this.setState({isShow: !isShow})
+  }
+
   render() {
-    const {todosListData, todoItem, taskTitle, error} = this.state
+    const {todosListData, taskTitle, error, isShow} = this.state
+
+    const filteredData = todosListData.filter(
+      eachTodo => eachTodo.completed === true,
+    )
 
     return (
       <div className="container">
@@ -110,18 +121,35 @@ class Home extends Component {
           </button>
         </form>
         <hr className="hr-line" />
-        <div>
+        <div className="card">
           <h1 className="card-heading">Todos List</h1>
+          <button
+            className="filter-card"
+            type="button"
+            onClick={this.onClickFilter}
+          >
+            Filter <BsFilter className="filter-icon" />
+          </button>
           <ul className="todo-list-items">
-            {todosListData.map(eachTodo => (
-              <TodoItem
-                key={eachTodo.id}
-                todoDetails={eachTodo}
-                onChangeBoxElement={this.onChangeBoxElement}
-                onDeleteTask={this.onDeleteTask}
-                onEditTodo={this.onEditTodo}
-              />
-            ))}
+            {!isShow
+              ? todosListData.map(eachTodo => (
+                  <TodoItem
+                    key={eachTodo.id}
+                    todoDetails={eachTodo}
+                    onChangeBoxElement={this.onChangeBoxElement}
+                    onDeleteTask={this.onDeleteTask}
+                    onEditTodo={this.onEditTodo}
+                  />
+                ))
+              : filteredData.map(eachTodo => (
+                  <TodoItem
+                    key={eachTodo.id}
+                    todoDetails={eachTodo}
+                    onChangeBoxElement={this.onChangeBoxElement}
+                    onDeleteTask={this.onDeleteTask}
+                    onEditTodo={this.onEditTodo}
+                  />
+                ))}
           </ul>
         </div>
       </div>

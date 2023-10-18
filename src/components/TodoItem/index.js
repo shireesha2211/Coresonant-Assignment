@@ -5,7 +5,7 @@ import './index.css'
 
 const TodoItem = props => {
   const {todoDetails, onChangeBoxElement, onDeleteTask, onEditTodo} = props
-  const {completed, userId, id, title} = todoDetails
+  const {completed, id, title} = todoDetails
 
   const onClickCheckBox = () => {
     onChangeBoxElement(id)
