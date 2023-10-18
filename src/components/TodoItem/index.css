@@ -1,0 +1,44 @@
+.list-item {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 32px 10px 32px;
+}
+
+.check-box-marked {
+  color: #05c705;
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-left: 10px;
+}
+
+.check-box-label {
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-left: 10px;
+  color: #2e8ccf;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.edit-icon {
+  width: 22px;
+  height: 22px;
+  margin-left: 10px;
+}
+
+.delete-icon {
+  width: 22px;
+  height: 22px;
+  margin-left: 10px;
+}

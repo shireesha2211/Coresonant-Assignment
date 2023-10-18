@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 16px;
+  background-color: #f9fbfe;
+}
+
+.heading {
+  font-size: 35px;
+  line-height: 48px;
+  font-family: 'Roboto';
+  font-weight: 600;
+  color: #0a0909;
+  text-align: center;
+}
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.label-element {
+  color: #242323;
+  font-family: 'Roboto';
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 33px;
+}
+
+.input-element {
+  margin: 10px 22px 0px 22px;
+  width: 540px;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #3b3838;
+  padding-left: 8px;
+  background-color: #ffffff;
+}
+
+.add-button {
+  width: 84px;
+  height: 40px;
+  margin: 16px 10px 0px 0px;
+  border-radius: 7px;
+  background-color: #4c63b6;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 400;
+  font-family: 'Roboto';
+}
+
+.hr-line {
+  width: 100%;
+}
+
+.card-heading {
+  font-size: 32px;
+  line-height: 37px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  color: #1a1616;
+  text-align: center;
+}
+
+.todo-list-items {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 17px;
+}
+
+.error {
+  color: #fc0303;
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 0px;
+  margin-left: 22px;
+}
